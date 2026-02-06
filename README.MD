@@ -117,7 +117,7 @@ mvn clean verify
 
 ## ✨ Coleccion Bruno
 <p align="center">
- <a href="https://github.com/usebruno/bruno" target="_blank"><img align="center" alt="Bruno"  src="https://github.com/usebruno/bruno/raw/main/assets/images/logo-transparent.png"></a>
+ <a href="https://github.com/usebruno/bruno" target="_blank"><img align="center" alt="Bruno" height="84" width="84" src="https://github.com/usebruno/bruno/raw/main/assets/images/logo-transparent.png"></a>
 </p>
 
 Se incluye una coleccion para probar la API desarrollada en Bruno, que es una alternativa GNU a Postman pero con GIT lo que la hace ideal para equipos
