@@ -1,0 +1,48 @@
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: telegrm-db
+    environment:
+      POSTGRES_DB: telegrmdb
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d telegrmdb"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: .
+    container_name: telegrm-api
+    env_file:
+      - .env
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+      # Base de Datos
+      DB_URL: jdbc:postgresql://db:5432/telegrmdb
+      DB_USERNAME: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      
+      # Telegram
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
+      
+      # IA (OpenRouter)
+      OPENROUTE_KEY: ${OPENROUTE_KEY}
+      AI_SYSTEM_PROMPT: ${AI_SYSTEM_PROMPT}
+      AI_TEMPERATURE: ${AI_TEMPERATURE}
+      AI_MAX_TOKENS: ${AI_MAX_TOKENS}
+      
+      # JWT
+      JWT_SECRET: ${JWT_SECRET}
+
+volumes:
+  postgres_data:

@@ -1,0 +1,36 @@
+spring:
+  config:
+    import: "optional:file:.env[.properties]"
+  application:
+    name: telegrm
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+telegram:
+  bot-token: ${TELEGRAM_BOT_TOKEN}
+
+openrouter:
+  api-key: ${OPENROUTE_KEY}
+  base-url: https://openrouter.ai/api/v1
+  model: tngtech/deepseek-r1t2-chimera:free
+  system-prompt: ${AI_SYSTEM_PROMPT:"IA caótica en español sin lógica, patos espaciales, humor cambiante (no agresivo), sin ser útil."}
+  temperature: ${AI_TEMPERATURE:1.2}
+  max-tokens: ${AI_MAX_TOKENS:150}
+
+jwt:
+  secret: ${JWT_SECRET}
+  expiration: 86400000 # 24 horas

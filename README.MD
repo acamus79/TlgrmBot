@@ -1,6 +1,17 @@
-# Telegrm API - Ejercicio Backend Hexagonal
+# TelegrmBOT API - Backend Hexagonal
+<div style="display: inline_block"><br><br>
+ <p align="center">
+  <a href="#" target="_blank"><img align="center" alt="JAVA" height="84" width="84" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"></a>
+  <a href="#" target="_blank"><img align="center" alt="SPRING" height="84" width="84" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"></a>
+  <a href="#" target="_blank"><img align="center" alt="MAVEN" height="84" width="84" src="https://www.svgrepo.com/show/373829/maven.svg"></a>
+  <a href="#" target="_blank"><img align="center" alt="POSTGRESQL" height="84" width="84" src="https://www.svgrepo.com/show/303301/postgresql-logo.svg" /></a>
+  <a href="#" target="_blank"><img align="center" alt="SWAGGER" height="84" width="84" src="https://www.svgrepo.com/show/374111/swagger.svg" /></a>
+  <a href="#" target="_blank"><img align="center" alt="Docker" height="84" width="84" src="https://www.svgrepo.com/show/452192/docker.svg" /></a>
+  <a href="#" target="_blank"><img align="center" alt="Intellijidea" height="84" width="84" src="https://www.svgrepo.com/show/306240/intellijidea.svg" /></a>
+  </p>
+ </div>
 
-Esta es una API REST desarrollada como parte de un ejercicio. El proyecto integra el servicio de mensajería de Telegram, responde a los mensajes utilizando IA y expone una API para gestionar las conversaciones, todo construido sobre una estricta **Arquitectura Hexagonal**.
+Esta es una API REST desarrollada como parte de un ejercicio Backend. El proyecto integra el servicio de mensajería de Telegram, responde a los mensajes utilizando IA y expone una API para gestionar las conversaciones, todo construido sobre una estricta **Arquitectura Hexagonal**.
 
 ## ✨ Features
 
@@ -35,6 +46,7 @@ El proyecto sigue los siguientes principios de diseño:
 -   **Testing:** JUnit 5, Mockito, Testcontainers
 -   **IA:** OpenRouter API
 -   **Build Tool:** Maven
+-   **IDE:** IntelliJ Idea (Community Edition)
 
 ## 🚀 Getting Started
 
@@ -102,3 +114,10 @@ Para ejecutar todos los tests unitarios y de integración (requiere Docker), usa
 ```sh
 mvn clean verify
 ```
+
+_____
+<p align="center">
+ <a href="https://acamus79.github.io" target="_blank"><img align="center" alt="Portfolio"  src="https://forthebadge.com/images/badges/built-with-love.svg"></a>
+ <a href="#" target="_blank"><img align="center" alt="Daugther"  src="https://github.com/acamus79/StoreChallenge/assets/85143329/f5dda3bd-81cb-4ece-9a60-4c7ae215fa88"></a>
+ <a href="#" target="_blank"><img align="center" alt="myMachine"  src="https://github.com/acamus79/StoreChallenge/assets/85143329/5f6c41aa-4209-44b4-8eb7-62f6163c23a7"></a>
+</p>
