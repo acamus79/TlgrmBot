@@ -115,9 +115,15 @@ Para ejecutar todos los tests unitarios y de integración (requiere Docker), usa
 mvn clean verify
 ```
 
+## ✨ Coleccion Bruno
+<p align="center">
+ <a href="https://github.com/usebruno/bruno" target="_blank"><img align="center" alt="Bruno" height="84" width="84" src="https://github.com/usebruno/bruno/raw/main/assets/images/logo-transparent.png"></a>
+</p>
+
+Se incluye una coleccion para probar la API desarrollada en Bruno, que es una alternativa GNU a Postman pero con GIT lo que la hace ideal para equipos
 _____
 <p align="center">
- <a href="https://acamus79.github.io" target="_blank"><img align="center" alt="Portfolio"  src="https://forthebadge.com/images/badges/built-with-love.svg"></a>
+ <a href="https://acamus.is-a.dev" target="_blank"><img align="center" alt="Portfolio"  src="https://forthebadge.com/images/badges/built-with-love.svg"></a>
  <a href="#" target="_blank"><img align="center" alt="Daugther"  src="https://github.com/acamus79/StoreChallenge/assets/85143329/f5dda3bd-81cb-4ece-9a60-4c7ae215fa88"></a>
  <a href="#" target="_blank"><img align="center" alt="myMachine"  src="https://github.com/acamus79/StoreChallenge/assets/85143329/5f6c41aa-4209-44b4-8eb7-62f6163c23a7"></a>
 </p>
