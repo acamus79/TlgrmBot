@@ -18,15 +18,14 @@ import io.swagger.v3.oas.annotations.servers.Server;
                         url = "https://acamus.is-a.dev/"
                 ),
                 description = """
-                    OpenApi documentation for Telegrm API.
+                    OpenApi documentation for Telgrm BOT API.
                     
                     ### Description
-                    TODO:
-                    *   `completar`: algo.
-                    *   `completar`: algo.
+                    *   `Authentication`: Endpoints for user registration and secure login via JWT.
+                    *   `Conversations`: Management of Telegram conversations, including message history retrieval and sending replies.
                     
                     """,
-                title = "TELEGRM - API REST",
+                title = "TELGRM BOT - API REST",
                 version = "0.1.00",
                 license = @License(
                         name = "License Apache 2.0",

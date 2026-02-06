@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "name": "Telegrm",
+  "name": "Telgrm BOT API",
   "type": "collection",
   "ignore": [
     "node_modules",

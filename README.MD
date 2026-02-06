@@ -115,12 +115,19 @@ Para ejecutar todos los tests unitarios y de integración (requiere Docker), usa
 mvn clean verify
 ```
 
-## ✨ Coleccion Bruno
+## ✨ Colecciones y documentación
+
+* Colección Postman: `Telgrm BOT API.json`
+* Documentación generada: `Telgrm BOT API-documentation.html`
+ 
+
+Se incluye una coleccion para probar la API desarrollada en Bruno, que es una alternativa GNU a Postman pero con GIT lo que la hace ideal para equipos [<img src="https://fetch.usebruno.com/button.svg" alt="Fetch in Bruno" style="width: 130px; height: 30px;" width="128" height="32">](https://fetch.usebruno.com?url=https%3A%2F%2Fgithub.com%2Facamus79%2FTlgrmBot.git "target=_blank rel=noopener noreferrer")
+
 <p align="center">
  <a href="https://github.com/usebruno/bruno" target="_blank"><img align="center" alt="Bruno" height="84" width="84" src="https://github.com/usebruno/bruno/raw/main/assets/images/logo-transparent.png"></a>
 </p>
 
-Se incluye una coleccion para probar la API desarrollada en Bruno, que es una alternativa GNU a Postman pero con GIT lo que la hace ideal para equipos
+
 _____
 <p align="center">
  <a href="https://acamus.is-a.dev" target="_blank"><img align="center" alt="Portfolio"  src="https://forthebadge.com/images/badges/built-with-love.svg"></a>
