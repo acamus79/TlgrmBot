@@ -39,6 +39,6 @@ public class ConversationRepositoryAdapter implements ConversationRepositoryPort
     public List<Conversation> findAll() {
         return jpaRepository.findAll().stream()
                 .map(ConversationEntity::toDomain)
-                .collect(Collectors.toList());
+                .toList();
     }
 }

@@ -46,6 +46,6 @@ public class UserRepositoryAdapter implements UserRepositoryPort {
     public List<User> findAll() {
         return jpaRepository.findAll().stream()
                 .map(UserEntity::toDomain)
-                .collect(Collectors.toList());
+                .toList();
     }
 }

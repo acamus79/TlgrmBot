@@ -26,6 +26,6 @@ public class MessageRepositoryAdapter implements MessageRepositoryPort {
     public List<Message> findByConversationId(String conversationId) {
         return jpaRepository.findByConversationIdOrderBySentAtAsc(conversationId).stream()
                 .map(MessageEntity::toDomain)
-                .collect(Collectors.toList());
+                .toList();
     }
 }

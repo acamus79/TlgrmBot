@@ -14,6 +14,11 @@ auth:bearer {
   token: {{token}}
 }
 
+script:post-response {
+  var id = res.body[0].id
+  bru.setEnvVar("conversationID", id)
+}
+
 settings {
   encodeUrl: true
   timeout: 0

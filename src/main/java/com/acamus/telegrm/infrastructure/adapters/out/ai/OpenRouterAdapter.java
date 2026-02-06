@@ -48,12 +48,12 @@ public class OpenRouterAdapter implements AiGeneratorPort {
                     .body(OpenRouterResponse.class);
 
             if (response != null && response.choices() != null && !response.choices().isEmpty()) {
-                ChatMessage msg = response.choices().get(0).message();
+                ChatMessage msg = response.choices().getFirst().message();
                 
-                // Priorizar la "locura" (reasoning) sobre la respuesta formal
-                if (msg.reasoning() != null && !msg.reasoning().isBlank()) {
-                    return msg.reasoning();
-                }
+                // NOTA: Descomentar para ver el razonamiento si el modelo lo soporta (reasoning) sobre la respuesta formal
+//                if (msg.reasoning() != null && !msg.reasoning().isBlank()) {
+//                    return msg.reasoning();
+//                }
                 
                 return msg.content();
             }

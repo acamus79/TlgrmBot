@@ -4,7 +4,7 @@ import com.acamus.telegrm.core.ports.in.telegram.ProcessUpdateCommand;
 import com.acamus.telegrm.core.ports.in.telegram.ProcessTelegramUpdatePort;
 import org.springframework.transaction.annotation.Transactional;
 
-// Este es el decorador. Su única responsabilidad es añadir la transacción.
+// This is the decorator. Its only responsibility is to add the transaction.
 public class TransactionalProcessTelegramUpdateUseCase implements ProcessTelegramUpdatePort {
 
     private final ProcessTelegramUpdatePort actualUseCase;
@@ -16,7 +16,7 @@ public class TransactionalProcessTelegramUpdateUseCase implements ProcessTelegra
     @Override
     @Transactional
     public void processUpdate(ProcessUpdateCommand command) {
-        // Delega la ejecución al caso de uso real, pero dentro de un contexto transaccional.
+        // Delegates execution to the actual use case, but within a transactional context.
         actualUseCase.processUpdate(command);
     }
 }

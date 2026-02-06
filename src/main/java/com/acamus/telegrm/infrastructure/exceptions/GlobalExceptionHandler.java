@@ -4,6 +4,7 @@ import com.acamus.telegrm.core.domain.exception.EmailAlreadyExistsException;
 import com.acamus.telegrm.core.domain.exception.InvalidCredentialsException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -17,7 +18,7 @@ import java.util.Map;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    // Excepción para credenciales inválidas (Login)
+    // Exception for invalid credentials (Login)
     @ExceptionHandler(InvalidCredentialsException.class)
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     public ResponseEntity<ErrorResponse> handleInvalidCredentials(InvalidCredentialsException ex) {
@@ -25,7 +26,7 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(error, HttpStatus.UNAUTHORIZED);
     }
 
-    // Excepción para emails duplicados (Registro)
+    // Exception for duplicate emails (Registration)
     @ExceptionHandler(EmailAlreadyExistsException.class)
     @ResponseStatus(HttpStatus.CONFLICT)
     public ResponseEntity<ErrorResponse> handleEmailExists(EmailAlreadyExistsException ex) {
@@ -33,7 +34,7 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(error, HttpStatus.CONFLICT);
     }
 
-    // Excepción para validación de DTOs de entrada
+    // Exception for validation of input DTOs
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ResponseEntity<ErrorResponse> handleValidationExceptions(MethodArgumentNotValidException ex) {
@@ -47,7 +48,7 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }
 
-    // Excepción para endpoints no encontrados (404)
+    // Exception for endpoints not found (404)
     @ExceptionHandler(NoResourceFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public ResponseEntity<ErrorResponse> handleNoResourceFound(NoResourceFoundException ex) {
@@ -56,16 +57,22 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
     }
 
-    // Excepción genérica para cualquier otro error no controlado
+    // Exception for unreadable or missing request body (malformed JSON)
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ResponseEntity<ErrorResponse> handleHttpMessageNotReadable(HttpMessageNotReadableException ex) {
+        ErrorResponse error = new ErrorResponse("Malformed Request", "Required request body is missing or unreadable.");
+        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+    }
+
+    // Generic exception for any other uncontrolled error
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ResponseEntity<ErrorResponse> handleGlobalException(Exception ex) {
-        // En un entorno de producción, aquí se debería loggear el error real.
-        // Por ejemplo: log.error("Unhandled exception occurred: ", ex);
         ErrorResponse error = new ErrorResponse("Internal Server Error", "An unexpected error occurred. Please try again later.");
         return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    // Clase DTO para una respuesta de error consistente
+    // DTO class for consistent error response
     public record ErrorResponse(String message, Object details) {}
 }
