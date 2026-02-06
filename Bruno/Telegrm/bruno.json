@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Telegrm",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

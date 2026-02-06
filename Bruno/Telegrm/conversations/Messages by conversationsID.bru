@@ -1,0 +1,20 @@
+meta {
+  name: Messages by conversationsID
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:8080/api/conversations/328edff3-4f55-4b99-9ab7-64d56edc2adf/messages
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
